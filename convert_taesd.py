@@ -1,5 +1,5 @@
-from tasesd_converter import TAESDConverter
+from taeov_converter import TAEOVConverter
 
 
-tasd_converter = TAESDConverter("tasedov")
-tasd_converter.convert()
+tasdxl_converter = TAEOVConverter("madebyollin/taesd", "taesddov")
+tasdxl_converter.convert()
