@@ -1,0 +1,9 @@
+torch
+openvino==2025.1.0
+git+https://github.com/huggingface/optimum-intel.git
+transformers==4.49.0
+nncf==2.16.0
+peft>=0.7.0
+diffusers==0.33.0
+sentencepiece
+protobuf
