@@ -8,7 +8,7 @@ from vae import VAEDecoder, VAEEncoder
 
 
 class TAEOVConverter:
-    """TAESDXL Converter for OpenVINO"""
+    """TAESD/TAESDXL/TAEF1 Converter for OpenVINO"""
 
     def __init__(
         self,
@@ -35,9 +35,14 @@ class TAEOVConverter:
     def _convert_tiny_vae_decoder(self):
         print("⏳ Converting VAE decoder...")
         vae_decoder = VAEDecoder(self.tiny_vae)
-        example_input = {
-            "latent_sample": torch.zeros((1, 4, 64, 64)),
-        }
+        if self.model_id == "madebyollin/taef1":
+            example_input = {
+                "latent_sample": torch.zeros((1, 16, 64, 64)),
+            }
+        else:
+            example_input = {
+                "latent_sample": torch.zeros((1, 4, 64, 64)),
+            }
         ov_model = ov.convert_model(
             vae_decoder,
             example_input=example_input,
