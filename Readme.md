@@ -1,6 +1,6 @@
 # OpenVINO Tiny Autoencoders
 
-This reporsitory contains code to convert Tiny Autoencoders to OpenVINO.
+This repository contains code to convert Tiny Autoencoders to OpenVINO.
 
 ## Dependencies
 
